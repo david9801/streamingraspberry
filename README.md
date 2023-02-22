@@ -80,7 +80,7 @@ Opciones->
 
 
 ### 2. Desde la navbar si se está logueado
-Opciones-> Varía las opciones user y se añade la opcion: `Reserve`
+Opciones-> 
 
 ## Consideraciones
 
