@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\EventClassController;
+use App\Http\Controllers\GroupController;
+use App\Http\Controllers\SubjectController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,3 +41,8 @@ Route::get('/goto-admin', function () {
 Route::get('/goto-profile', function () {
     return view('users.ViewProfile');
 })->name('view-profile')->middleware('auth');
+
+
+Route::get('class-go',[EventClassController::class,'index'])->name('indexclass')->middleware('auth');
+Route::get('group-go',[GroupController::class,'index'])->name('indexgroup')->middleware('auth');
+Route::get('subject-go',[SubjectController::class,'index'])->name('indexsubject')->middleware('auth');

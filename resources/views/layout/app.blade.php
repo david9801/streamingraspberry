@@ -60,12 +60,22 @@
                                     @endguest
 
                                     @auth()
-                                        <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="{{route('admin')}}">  Admin </a>
-                                        </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link active" aria-current="page" href="{{route('admin')}}">  Admin </a>
+                                            </li>
                                             <li class="nav-item">
                                                 <a class="nav-link active" aria-current="page" href="{{route('view-profile')}}">  Ver Mi Perfil </a>
                                             </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link active" aria-current="page" href="{{route('indexclass')}}">  Próximas Clases </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link active" aria-current="page" href="{{route('indexgroup')}}">  Ver Grupos </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link active" aria-current="page" href="{{route('indexsubject')}}">  Ver Asignaturas</a>
+                                            </li>
+
                                     @endauth
                             </ul>
                         </li>

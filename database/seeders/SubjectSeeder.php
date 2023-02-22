@@ -18,14 +18,14 @@ class SubjectSeeder extends Seeder
             ['name' => 'Programacion IA'],
             [
                 'year' => '2023',
-                'description' => 'Programación con python para IA y Machine Learning','teacher' =>'pepe'
+                'description' => 'Programación con python para IA y Machine Learning','teacher' =>'pepe','group_id'=>'1'
             ]
         );
         Subject::updateOrCreate(
             ['name' => 'Programacion IA II'],
             [
                 'year' => '2023',
-                'description' => 'Programación avanzada','teacher' =>'luis'
+                'description' => 'Programación avanzada','teacher' =>'luis','group_id'=>'2'
             ]
         );
     }

@@ -8,7 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class EventClass extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'name', 'date', 'description',
+        'name', 'date', 'description',  'subject_id'
     ];
+
+
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class, 'subject_id');
+        //una evento-clase pertenece a un solo turno (shift)
+    }
 }

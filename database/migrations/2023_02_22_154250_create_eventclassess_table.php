@@ -19,9 +19,6 @@ class CreateEventclassessTable extends Migration
             $table->date('date');
             $table->string('description');
             $table->timestamps();
-            $table->foreignId('group_id')
-                ->constrained('groups')
-                ->onDelete('cascade');
             $table->foreignId('subject_id')
                 ->constrained('subjects')
                 ->onDelete('cascade');

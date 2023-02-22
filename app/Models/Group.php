@@ -12,4 +12,15 @@ class Group extends Model
     protected $fillable = [
         'group', 'year','description'
     ];
+    public function subjects()
+    {
+        return $this->belongsToMany(Subject::class, 'group_subject', 'group_id', 'subject_id');
+        // un grupo puede tener varias asignaturas, y una asignatura puede pertenecer a varios grupos
+    }
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'group_user', 'group_id', 'user_id');
+    }
+
 }
+
