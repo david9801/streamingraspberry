@@ -1,5 +1,7 @@
-<# Sistema de videollamadas para clases online para raspberry pi
 
+
+
+Sistema de videollamadas para clases online para raspberry pi
 
 
 Este proyecto ha sido realizado con el fin educativo con el fin de avanzar en mi carrera profesional.
@@ -22,7 +24,7 @@ Este proyecto ha sido realizado con el fin educativo con el fin de avanzar en mi
 
 ### 1. Clonar repositorio de GITHUB
 
-`git glone https://github.com/david9801/padel.git`
+`git glone https://github.com/david9801/streamingraspberry.git`
 
 ### 2. Ejecutar migraciones del proyecto
 
