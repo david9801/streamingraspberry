@@ -40,7 +40,7 @@ En este proyecto ha sido empleado
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=padel
+DB_DATABASE=raspberry
 DB_USERNAME=root
 DB_PASSWORD=*******
 ```
