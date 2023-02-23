@@ -43,6 +43,6 @@ Route::get('/goto-profile', function () {
 })->name('view-profile')->middleware('auth');
 
 
-Route::get('class-go',[EventClassController::class,'index'])->name('indexclass')->middleware('auth');
+Route::get('eventclass-go',[EventClassController::class,'index'])->name('indexclass')->middleware('auth');
 Route::get('group-go',[GroupController::class,'index'])->name('indexgroup')->middleware('auth');
 Route::get('subject-go',[SubjectController::class,'index'])->name('indexsubject')->middleware('auth');

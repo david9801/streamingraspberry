@@ -20,7 +20,14 @@
     <title>STREAMING-@yield('title') </title>
 </head>
 
- <body id="boddy">
+ <body id="boddy" style="
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    margin:0;
+">
  <div id="wrapped">
     <div  class="bg-light1 d-flex flex-column min-vh-100" style="background: #2e343d">
         <nav class="navbar navbar-dark bg-dark fixed-top" >
@@ -92,6 +99,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 
  </div>
+
+ <footer id="footer" style="
+    bottom: 0;
+    text-align: center;
+   margin-top:auto;
+    width: 100%;"> Pagina hecha en Laravel</footer>
+
 </body>
 
 </html>
