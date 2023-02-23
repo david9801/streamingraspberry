@@ -11,4 +11,5 @@ class SubjectController extends Controller
         return view('class.subject');
     }
 
+
 }

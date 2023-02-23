@@ -1,0 +1,4 @@
+#boddy {
+    overflow-y: auto; /* muestra el scroll vertical solo cuando sea necesario */
+    overflow-x: hidden; /* oculta el scroll horizontal siempre */
+}
