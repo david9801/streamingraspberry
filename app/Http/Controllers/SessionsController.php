@@ -82,7 +82,7 @@ class SessionsController extends Controller
             Log::error('error pre save');
             $user->save();
 
-            return redirect()->route('classgo')->with('success', 'Foto de perfil subida correctamente.');
+            return redirect()->back()->with('success', 'Foto de perfil subida correctamente.');
         } else {
             return redirect()->back()->withErrors(['profile_image' => 'Por favor, seleccione un archivo de imagen.']);
         }
@@ -98,7 +98,7 @@ class SessionsController extends Controller
             $user->profile_image = null;
             $user->save();
 
-            return redirect()->route('reserves.index')->with('success', 'Foto de perfil eliminada correctamente.');
+            return redirect()->back()->with('success', 'Foto de perfil eliminada correctamente.');
         } else {
             return redirect()->back()->withErrors(['profile_image' => 'No hay ninguna foto de perfil para eliminar.']);
         }

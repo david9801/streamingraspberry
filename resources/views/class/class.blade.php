@@ -1,4 +1,4 @@
 @extends('layout.app')
-@section('title', 'Group')
+@section('title', 'Clases')
 @section('content')
 @endsection
