@@ -1,10 +1,10 @@
 @extends('layout.app')
 @section('title', 'Ver perfil')
 @section('content')
-<div class="mt-5">
-    <div class="container mt-5">
-        <div class="row-mt-5">
-            <div class="col-md-4 sm-4 ml-4  mb-4 mt-4">
+
+    <div class="container mt-5 text-center">
+        <div class="row h-25 mt-5 align-items-center">
+            <div class="col-md-6 mb-4">
                 <div class="card text-bg-success mb-3">
                     <form action="{{ route('edit-user', ['id' => Auth::user()->id]) }}" method="POST" id="change">
                         @method('PUT')
@@ -30,40 +30,44 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-4 sm-4 ml-4  mb-4 mt-4">
+            <div class="col-md-6 mb-4">
                 <div class="card text-bg-danger mb-3">
                     <form id="change2">
                         <p>Eliminar Usuario</p>
+                        <p> </p>
+                        <p> </p>
+                        <p> </p>
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
                             <i class="bi bi-trash3-fill"> Delete </i>
                         </button>
                 </div>
-            </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete User</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Are you sure you want to delete your user?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" form="delete-user-now" class="btn btn-danger">Delete</button>
-                                    </div>
-                                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Delete User</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete your user?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" form="delete-user-now" class="btn btn-danger">Delete</button>
                             </div>
                         </div>
-                    </form>
-                    <form id="delete-user-now" action="{{route('delete-user', ['id' => Auth::user()->id])}}" method="POST" >
-                        @method('DELETE')
-                        @csrf
-                    </form>
-
-            <div class="col-md-4 sm-4 ml-4  mb-4 mt-4">
+                    </div>
+                </div>
+                </form>
+                <form id="delete-user-now" action="{{route('delete-user', ['id' => Auth::user()->id])}}" method="POST" >
+                    @method('DELETE')
+                    @csrf
+                </form>
+            </div>
+        </div>
+        <div class="row h-25  align-items-center">
+            <div class="col-md-6 mb-4">
                 <div class="card text-bg-success mb-3">
                     <form action="{{ route('up', ['id' => Auth::user()->id]) }}" method="POST" id="change3" enctype="multipart/form-data">
                         @method('PUT')
@@ -74,7 +78,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-4 sm-4 ml-4  mb-4 mt-4">
+            <div class="col-md-6 mb-4">
                 <div class="card text-bg-danger mb-3">
                     <form id="change4">
                         <p>Eliminar foto de perfil</p>
@@ -82,34 +86,33 @@
                             <i class="bi bi-trash3-fill"> Delete </i>
                         </button>
                 </div>
-            </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="deleteModalImage" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Photo</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Are you sure you want to delete the profile image?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" form="deleteFormImage" class="btn btn-danger">Delete</button>
-                                    </div>
-                                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="deleteModalImage" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Photo</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete the profile image?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" form="deleteFormImage" class="btn btn-danger">Delete</button>
                             </div>
                         </div>
-                    </form>
-                    <form id="deleteFormImage" action="{{route('delete-image', ['id' => Auth::user()->id])}}" method="POST">
-                        @method('DELETE')
-                        @csrf
-                    </form>
+                    </div>
+                </div>
+                </form>
+                <form id="deleteFormImage" action="{{route('delete-image', ['id' => Auth::user()->id])}}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                </form>
+            </div>
         </div>
     </div>
-</div>
-
 
 @endsection
+
 
