@@ -6,10 +6,13 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, HasRoles;
+    //se ha añadido el paquete de spatie para asignar roles y permisos
+    //esta tabla nos ahorra el paso de crear tabls/modelos con una relacion
+    //muchos a muchos entre usuarios y roles (profesor y alumno)
 
     /**
      * The attributes that are mass assignable.

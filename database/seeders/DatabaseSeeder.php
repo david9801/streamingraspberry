@@ -14,11 +14,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //creamos los seeds para trabajar mejor al desarrollar el servicio
+        //importa el orden, por eso primero los roles antes que el user
         $this->call([
+            RolesTableSeeder::class,
+            UserSeeder::class,
             GroupSeeder::class,
             SubjectSeeder::class,
-            UserSeeder::class,
-            RolesTableSeeder::class
         ]);
     }
 }

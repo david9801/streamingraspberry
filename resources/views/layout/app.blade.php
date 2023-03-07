@@ -52,8 +52,12 @@
                                     <ul class="dropdown-menu dropdown-menu-dark" aria-current="page">
                                             @guest
                                                 <li class="nav-item">
-                                                    <a class="nav-link active" aria-current="page" href="{{route('register.create')}}">  Registrate  </a>
+                                                    <a class="nav-link active" aria-current="page" href="{{route('register.create')}}">  Registrate como alumno </a>
                                                 </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" aria-current="page" href="{{route('createTeacher')}}">  Registrate como profesor </a>
+                                                </li>
+
                                                 <li class="nav-item">
                                                     <a class="nav-link active" aria-current="page" href="{{route('login')}}">   Entra  </a>
                                                 </li>

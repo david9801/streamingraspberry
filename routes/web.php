@@ -24,6 +24,8 @@ Route::get('/', function () {
 })->name('welcome');
 Route::resource('sessions',SessionsController::class);
 Route::resource('register',RegisterController::class);
+Route::get('go-register-teacher',[RegisterController::class,'createTeacher'])->name('createTeacher');
+Route::post('go-create-teacher',[RegisterController::class,'storeTeacher'])->name('storeTeacher');
 Route::post('do-login',[SessionsController::class,'doLogin'])->name('dologin');
 Route::get('go-login',[SessionsController::class,'login'])->name('login');
 Route::post('log-out',[SessionsController::class,'logout'])->name('logout')->middleware('auth');

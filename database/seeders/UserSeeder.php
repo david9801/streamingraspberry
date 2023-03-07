@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class UserSeeder extends Seeder
 {
@@ -15,20 +16,36 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::updateOrCreate(
-            ['email' => 'lucia@mail.com'],
-            [
-                'name' => 'Lucia Noguera',
-                'password' => Hash::make('123456'),
-            ]
-        );
+        $user = User::updateOrCreate([
+            'name' => 'Lucia Noguera',
+            'email' => 'lucia99@notmail.es',
+            'password' => Hash::make('123456')
+        ]);
+        $role = Role::where('name', 'teacher')->first();
+        $user->assignRole($role);
 
-        User::updateOrCreate(
-            ['email' => 'david@mail.com'],
-            [
-                'name' => 'David Hermo',
-                'password' => Hash::make('123456'),
-            ]
-        );
+        $user = User::updateOrCreate([
+            'name' => 'David Hermo',
+            'email' => 'david98@notmail.es',
+            'password' => Hash::make('123456')
+        ]);
+        $role = Role::where('name', 'teacher')->first();
+        $user->assignRole($role);
+
+        $user = User::updateOrCreate([
+            'name' => 'Juan de Dios',
+            'email' => 'juan00@notmail.es',
+            'password' => Hash::make('123456')
+        ]);
+        $role = Role::where('name', 'student')->first();
+        $user->assignRole($role);
+
+        $user = User::updateOrCreate([
+            'name' => 'Maca',
+            'email' => 'maca@notmail.es',
+            'password' => Hash::make('123456')
+        ]);
+        $role = Role::where('name', 'student')->first();
+        $user->assignRole($role);
     }
 }
