@@ -31,12 +31,10 @@
                 </div>
             </div>
             <div class="col-md-6 mb-4">
-                <div class="card text-bg-danger mb-3">
+                <div class="card text-bg-danger mb-3 h-100">
                     <form id="change2">
-                        <p>Eliminar Usuario</p>
-                        <p> </p>
-                        <p> </p>
-                        <p> </p>
+                        <p>Eliminar Usuario  </p>
+
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
                             <i class="bi bi-trash3-fill"> Delete </i>
                         </button>
