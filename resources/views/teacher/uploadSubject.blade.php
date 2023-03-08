@@ -29,16 +29,22 @@
                             <h2 class="text-center">¡Añade el curso que quieras impartir!</h2>
                         </div>
                         <div class="card-body text-center">
-                            <form action="{{ route('createCurso') }}" method="post" enctype="multipart/form-data" class="dropzone" id="my-awesome-dropzone">
+                            <form action="{{ route('create.Subject') }}" method="post" enctype="multipart/form-data" class="dropzone" id="my-awesome-dropzone">
                                 @csrf
                                 <div class="row">
                                     <div class="col-6">
-                                        <label for="name" class="form-label">Nombre del Curso</label>
-                                        <input type="text" class="form-control" id="name" name="name">
+                                        <label for="namex" class="form-label">Nombre del Curso</label>
+                                        <input type="text" class="form-control" id="namex" name="name">
                                     </div>
                                     <div class="col-6">
                                         <label for="temas" class="form-label">Cantidad de Temas</label>
                                         <input type="number" class="form-control" id="temas" name="temas">
+                                    </div>
+                                </div>
+                                <div class="row p-3">
+                                    <div class="col">
+                                        <label for="description" class="form-label">Descripcion de la asignatura</label>
+                                        <input type="text" class="form-control" id="description" name="description">
                                     </div>
                                 </div>
                                 <div class="row p-3">

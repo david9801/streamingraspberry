@@ -3,8 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\EventClassController;
-use App\Http\Controllers\GroupController;
 use App\Http\Controllers\SubjectController;
 
 
@@ -22,6 +20,7 @@ use App\Http\Controllers\SubjectController;
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
+
 Route::resource('sessions',SessionsController::class);
 Route::resource('register',RegisterController::class);
 Route::get('go-register-teacher',[RegisterController::class,'createTeacher'])->name('createTeacher');
@@ -34,9 +33,7 @@ Route::delete('delete-profile-image/{id}',[SessionsController::class,'deleteProf
 Route::put('upload-profile-image/{id}',[SessionsController::class,'upload'])->name('up')->middleware('auth');
 Route::delete('delete-profile/{id}',[SessionsController::class,'deleteuser'])->name('delete-user')->middleware('auth');
 
-Route::get('/class-go', function () {
-    return view('class.class');
-})->name('classgo');
+
 Route::get('/goto-admin', function () {
     return view('users.AdminForm');
 })->name('admin')->middleware('auth');
@@ -45,6 +42,5 @@ Route::get('/goto-profile', function () {
 })->name('view-profile')->middleware('auth');
 
 
-Route::get('eventclass-go',[EventClassController::class,'index'])->name('indexclass')->middleware('auth');
-Route::get('group-go',[GroupController::class,'index'])->name('indexgroup')->middleware('auth');
-Route::get('subject-go',[SubjectController::class,'index'])->name('indexsubject')->middleware('auth');
+Route::get('subject-go',[SubjectController::class,'index'])->name('goCreateSubject')->middleware('auth');
+Route::POST('create-subject',[SubjectController::class,'create'])->name('create.Subject')->middleware('auth');

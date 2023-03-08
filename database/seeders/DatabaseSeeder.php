@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Subject;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,9 +17,7 @@ class DatabaseSeeder extends Seeder
         //importa el orden, por eso primero los roles antes que el user
         $this->call([
             RolesTableSeeder::class,
-            UserSeeder::class,
-            GroupSeeder::class,
-            SubjectSeeder::class,
+            UserSeeder::class
         ]);
     }
 }

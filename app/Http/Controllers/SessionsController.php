@@ -33,7 +33,7 @@ class SessionsController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Inicio de sesión exitoso
-            return redirect()->route('classgo');
+            return redirect()->route('welcome');
         }
         // Inicio de sesión fallido
         return back()->withErrors(['email' => 'Estas credenciales no coinciden con nuestros registros']);
@@ -65,7 +65,7 @@ class SessionsController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
-        return redirect()->route('classgo')->with('success', 'Password updated successfully!');
+        return redirect()->route('welcome')->with('success', 'Password updated successfully!');
     }
 
     public function upload(Request $request, $id)

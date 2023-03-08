@@ -15,16 +15,16 @@ class Subject extends Model
      */
     public $timestamps = false;
     protected $fillable = [
-        'name', 'year', 'description', 'teacher','group_id'
+        'name',
+        'temas',
+        'description',
+        'archivo',
+        'user_id'
     ];
-    public function eventclasses(){
-        return $this->hasMany(EventClass::class,'subject_id');
-        //una asignatura puede tener varios eventos-clases
-    }
-    public function groups()
+    public function user()
     {
-        return $this->belongsToMany(Group::class, 'subject_group', 'subject_id', 'group_id');
+        return $this->belongsTo(User::class, 'user_id');
+        //un curso pertenece a un user_id con rol de  profesor
     }
-
 }
 
